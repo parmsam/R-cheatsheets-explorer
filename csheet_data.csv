@@ -8,7 +8,7 @@ caret.pdf,caret package
 cartography.pdf,thematic maps with cartography
 collapse.pdf,advanced and fast data transformations with collapse
 data-import.pdf,data import
-data-transformation.pdf,data transformations
+data-transformation.pdf,data transformations with dplyr
 data-visualization-2.1.pdf,data visualization with ggplot2
 datatable.pdf,data transformation with data.table
 declaredesign.pdf,declare design
