@@ -39,7 +39,7 @@ server <- function(input, output) {
     #didnt set that up here
     tryCatch(
       expr = {
-      csheet_data <- readr::read_csv("csheet_data.csv")
+      csheet_data <- readr::read_csv("https://raw.githubusercontent.com/parmsam/R-cheatsheets-explorer/main/csheet_data.csv")
       },
       error = {
       req <- GET("https://api.github.com/repos/rstudio/cheatsheets/git/trees/master?recursive=1")
@@ -75,7 +75,7 @@ server <- function(input, output) {
       mutate(Language = str_remove(Language, "translations, ")) %>% 
       mutate(Language = str_remove(Language, "|(, [a-zA-Z ,]*)")) %>%
       mutate(Language = ifelse(is.na(Language), "english",  str_remove(Language, ",") )) %>%
-      relocate(Tags, Language)
+      relocate(Tags, Language, `PDF Title`)
       
     csheet_data3
   }, escape = FALSE))
